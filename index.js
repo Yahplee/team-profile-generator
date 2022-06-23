@@ -1,3 +1,5 @@
+// Defining the constants, which are referring to the other .js files
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Employee = require("./lib/employee");
@@ -5,8 +7,10 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
+// created an employee array to store employee information
 const employeeArr = [];
 
+// the init function which contains the inquirer
 const init = () => {
 	inquirer
 		.prompt([
@@ -75,6 +79,7 @@ const init = () => {
 		});
 };
 
+// function that generates the HTML file with either the success message or the error message
 const writeToFile = (fileName, data) => {
 	fs.writeFile(fileName, data, (err) => {
 		if (err) throw err;
@@ -82,7 +87,7 @@ const writeToFile = (fileName, data) => {
 	});
 };
 
-// function taht creates card
+// function that generates the card within the HTML file
 const generateCard = (employee) => {
 	let confirmRole;
 
@@ -115,7 +120,7 @@ const generateCard = (employee) => {
 	`;
 };
 
-// need to generate card for every employee
+// function that renders a card for each employee
 const renderCard = (employeeArr) => {
 	const cardsArr = [];
 	employeeArr.forEach((employee) => {
@@ -124,7 +129,7 @@ const renderCard = (employeeArr) => {
 	return cardsArr.join("");
 };
 
-// function taht crreates html
+// function taht creates the HTML
 const createHTML = (employeeArr) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -154,4 +159,5 @@ const createHTML = (employeeArr) => `
 </html>
 `;
 
+// the initial function that runs upon opening with Node
 init();
