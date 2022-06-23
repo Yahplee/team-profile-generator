@@ -118,7 +118,7 @@ const generateCard = (employee) => {
 // card will need to be appended based on the choices from an if statement based on employeeArr
 
 // function taht crreates html
-const createHTML = (employeeData) => `
+const createHTML = (employeeArr) => `
 <!DOCTYPE html>
 <html lang="en">
 	<head>
