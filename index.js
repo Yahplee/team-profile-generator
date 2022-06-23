@@ -86,28 +86,28 @@ const writeToFile = (fileName, data) => {
 const generateCard = (employee) => {
 	let confirmRole;
 
-	switch (employee.role) {
+	switch (employee.getRole()) {
 		case "Manager":
-			confirmRole = `Office Number: ${employee.parameter}`;
+			confirmRole = `Office Number: ${employee.officeNumber()}`;
 			break;
 		case "Engineer":
-			confirmRole = `Github: <a href="https://github.com/${employee.parameter} target="_blank">${employee.parameter}</a>`;
+			confirmRole = `Github: <a href="https://github.com/${employee.getGithub()} target="_blank">${employee.getGithub()}</a>`;
 			break;
 		case "Intern":
-			confirmRole = `School Name: ${employee.parameter}`;
+			confirmRole = `School Name: ${employee.getSchool()}`;
 			break;
 	}
 
 	return `
 	<section class="card mb-3" style="width: 18rem">
 				<div class="card-header text-white bg-primary">
-					<h2 class="card-title">${employee.name}</h2>
-					<h3 class="card-subtitle">${employee.role}</h3>
+					<h2 class="card-title">${employee.getName()}</h2>
+					<h3 class="card-subtitle">${employee.getRole()}</h3>
 				</div>
 				<div class="card-body">
 					<ul class="d-flex flex-column list-group bg-white text-body">
-						<li class="list-group-item">ID: ${employee.id}</li>
-						<li class="list-group-item"><a href="mailto:${employee.email}">${employee.email}</a></li>
+						<li class="list-group-item">ID: ${employee.getId()}</li>
+						<li class="list-group-item"><a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></li>
 						<li class="list-group-item">${confirmRole}</li>
 					</ul>
 				</div>
@@ -115,7 +115,14 @@ const generateCard = (employee) => {
 	`;
 };
 
-// card will need to be appended based on the choices from an if statement based on employeeArr
+// need to generate card for every employee
+const renderCard = (employeeArr) => {
+	const cardsArr = [];
+	employeeArr.forEach((employee) => {
+		cardsArr.push(generateCard(employee));
+	});
+	return cardsArr.join("");
+};
 
 // function taht crreates html
 const createHTML = (employeeArr) => `
@@ -141,7 +148,7 @@ const createHTML = (employeeArr) => `
 			</div>
 		</header>
 		<main class="container d-flex flex-row justify-content-around">
-			${generateCard(employeeArr)}
+			${renderCard(employeeArr)}
 		</main>
 	</body>
 </html>
