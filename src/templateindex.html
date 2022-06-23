@@ -14,25 +14,27 @@
 		<title>Team Profile Generator</title>
 	</head>
 	<body>
-		<div class="jumbotron jumbotron-fluid">
+		<header class="jumbotron jumbotron-fluid bg-danger text-white">
 			<div class="container">
-				<h1 class="display-4">My Team</h1>
+				<h1 class="display-4 text-center">My Team</h1>
 			</div>
-		</div>
-		<div class="container">
-			<div class="card text-white bg-primary mb-3" style="width: 18rem">
+		</header>
+		<main class="container d-flex flex-row justify-content-around">
+			<section class="card mb-3" style="width: 18rem">
+				<div class="card-header text-white bg-primary">
+					<h2 class="card-title">Name</h2>
+					<h3 class="card-subtitle">Role</h3>
+				</div>
 				<div class="card-body">
-					<div>
-						<h2 class="card-title">Name</h2>
-						<h3 class="card-subtitle">Role</h3>
-					</div>
 					<ul class="d-flex flex-column list-group bg-white text-body">
 						<li class="list-group-item">ID:</li>
-						<li class="list-group-item">Email</li>
+						<li class="list-group-item">
+							<a href="mailto:email@email.com">Email</a>
+						</li>
 						<li class="list-group-item">Paramter</li>
 					</ul>
 				</div>
-			</div>
-		</div>
+			</section>
+		</main>
 	</body>
 </html>
