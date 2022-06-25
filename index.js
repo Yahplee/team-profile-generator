@@ -96,7 +96,7 @@ const generateCard = (employee) => {
 			confirmRole = `Office Number: ${employee.officeNumber()}`;
 			break;
 		case "Engineer":
-			confirmRole = `Github: <a href="https://github.com/${employee.getGithub()} target="_blank">${employee.getGithub()}</a>`;
+			confirmRole = `Github: <a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a>`;
 			break;
 		case "Intern":
 			confirmRole = `School Name: ${employee.getSchool()}`;
