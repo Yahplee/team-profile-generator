@@ -6,7 +6,7 @@
 
 The main purpose of this project is to create an application that allows the manager to view and update his or her team's information at a glance. In this application, the users will need to answer some questions that will reflect the team's information on a webpage.
 
-You can find a video guide to the team-profile-generator [here](https://youtu.be/sMq3Lq8jOBY).
+You can find a video guide to the team-profile-generator [here](https://www.youtube.com/watch?v=qVpXFFeXxuk).
 
 ## Table of Contents
 
